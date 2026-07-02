@@ -48,6 +48,31 @@
   - sprite: _Impstation/Mobs/Customization/Arachnid/snout.rsi
     state: whipspidermouth
 
+# Hair
+- type: marking
+  id: SpiderHair1
+  bodyPart: Hair
+  groupWhitelist: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/hair.rsi
+    state: fluffy
+
+- type: marking
+  id: SpiderHair2
+  bodyPart: Hair
+  groupWhitelist: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/hair.rsi
+    state: longhorned
+
+- type: marking
+  id: SpiderHair3
+  bodyPart: Hair
+  groupWhitelist: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/hair.rsi
+    state: wisps
+
 # Eyes
 - type: marking
   id: ArachnidEyesDefault
@@ -64,7 +89,7 @@
 - type: marking
   id: ArachnidEyesJumper
   bodyPart: Eyes
-  #speciesRestriction: [ Arachnid, Arachne ]
+  # speciesRestriction: [ Arachnid, Arachne ]
   groupWhitelist: [Arachnid]
   coloring:
     default:
@@ -83,7 +108,7 @@
 - type: marking
   id: ArachnidEyesJumperGlowing
   bodyPart: Eyes
-  #speciesRestriction: [ Arachnid, Arachne ]
+  # speciesRestriction: [ Arachnid, Arachne ]
   groupWhitelist: [Arachnid]
   coloring:
     default:
@@ -103,7 +128,7 @@
 - type: marking
   id: ArachnidEyesRound
   bodyPart: Eyes
-  #speciesRestriction: [ Arachnid, Arachne ]
+  # speciesRestriction: [ Arachnid, Arachne ]
   groupWhitelist: [Arachnid]
   coloring:
     default:
@@ -122,7 +147,7 @@
 - type: marking
   id: ArachnidEyesRoundGlowing
   bodyPart: Eyes
-  #speciesRestriction: [ Arachnid, Arachne ]
+  # speciesRestriction: [ Arachnid, Arachne ]
   groupWhitelist: [Arachnid]
   coloring:
     default:
@@ -171,6 +196,40 @@
   - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
     state: spidereyesmulti4
 
+# Head Side
+- type: marking
+  id: ArachnidCheliceraeSmall
+  bodyPart: HeadSide
+
+  groupWhitelist: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/headside.rsi
+    state: small
+
+- type: marking
+  id: ArachnidCheliceraeBig
+  bodyPart: HeadSide
+  groupWhitelist: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/headside.rsi
+    state: big
+
+- type: marking
+  id: ArachnidCheliceraeSolifugid
+  bodyPart: HeadSide
+  groupWhitelist: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/headside.rsi
+    state: solifugid
+
+- type: marking
+  id: ArachnidCheliceraeLongjaw
+  bodyPart: HeadSide
+  groupWhitelist: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/headside.rsi
+    state: longjaw
+
 # RArm
 - type: marking
   id: ArachnidRArmSegments
@@ -214,65 +273,6 @@
     state: segments1
   - sprite: _Impstation/Mobs/Customization/Arachnid/lleg.rsi
     state: segments2
-
-# Hair
-- type: marking
-  id: SpiderHair1
-  bodyPart: Hair
-  groupWhitelist: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/Arachnid/hair.rsi
-    state: fluffy
-
-- type: marking
-  id: SpiderHair2
-  bodyPart: Hair
-  groupWhitelist: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/Arachnid/hair.rsi
-    state: longhorned
-
-- type: marking
-  id: SpiderHair3
-  bodyPart: Hair
-  groupWhitelist: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/Arachnid/hair.rsi
-    state: wisps
-
-# Head Side
-- type: marking
-  id: ArachnidCheliceraeSmall
-  bodyPart: HeadSide
-
-  groupWhitelist: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/Arachnid/headside.rsi
-    state: small
-
-- type: marking
-  id: ArachnidCheliceraeBig
-  bodyPart: HeadSide
-  groupWhitelist: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/Arachnid/headside.rsi
-    state: big
-
-- type: marking
-  id: ArachnidCheliceraeSolifugid
-  bodyPart: HeadSide
-  groupWhitelist: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/Arachnid/headside.rsi
-    state: solifugid
-
-- type: marking
-  id: ArachnidCheliceraeLongjaw
-  bodyPart: HeadSide
-  groupWhitelist: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/Arachnid/headside.rsi
-    state: longjaw
 
 # Tail
 - type: marking
