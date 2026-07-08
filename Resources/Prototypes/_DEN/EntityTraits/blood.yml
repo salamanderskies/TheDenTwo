@@ -4,11 +4,16 @@
   description: trait-red-blood-desc
   category: BloodSwapTraits
   cost: 1
-#  speciesBlacklist: [IPC, Plasmaman, Human, Dwarf, Reptilian, Vulpkanin, Tajaran, Felinid, Harpy, Oni, Rodentia, Feroxi, Ovinia, Canid, Kitsune]
-  speciesBlacklist: [Human, Dwarf, Reptilian, Vulpkanin]
-  components:
-    - type: BloodSwap
-      bloodReagent: Blood
+  requirements:
+    - !type:PlayerSpeciesRequirement
+      #species: [IPC, Plasmaman, Human, Dwarf, Reptilian, Vulpkanin, Tajaran, Felinid, Harpy, Oni, Rodentia, Feroxi, Ovinia, Canid, Kitsune]
+      species: [Human, Dwarf, Reptilian, Vulpkanin]
+      inverted: true
+  functions:
+    - !type:AddComponentTrait
+      components:
+        - type: BloodSwap
+          bloodReagent: Blood
 
 - type: entityTrait
   id: BloodSwapBlue
@@ -16,11 +21,16 @@
   description: trait-blue-blood-desc
   category: BloodSwapTraits
   cost: 1
-#  speciesBlacklist: [IPC, Plasmaman, Arachnid, Arachne]
-  speciesBlacklist: [Arachnid]
-  components:
-    - type: BloodSwap
-      bloodReagent: CopperBlood
+  requirements:
+    - !type:PlayerSpeciesRequirement
+      #species: [IPC, Plasmaman, Arachnid, Arachne]
+      species: [Arachnid]
+      inverted: true
+  functions:
+    - !type:AddComponentTrait
+      components:
+        - type: BloodSwap
+          bloodReagent: CopperBlood
 
 - type: entityTrait
   id: BloodSwapInsect
@@ -28,11 +38,16 @@
   description: trait-insect-blood-desc
   category: BloodSwapTraits
   cost: 1
-#  speciesBlacklist: [IPC, Plasmaman, Moth, Chitinid]
-  speciesBlacklist: [Moth]
-  components:
-    - type: BloodSwap
-      bloodReagent: InsectBlood
+  requirements:
+    - !type:PlayerSpeciesRequirement
+      #species: [IPC, Plasmaman, Moth, Chitinid]
+      species: [Moth]
+      inverted: true
+  functions:
+    - !type:AddComponentTrait
+      components:
+        - type: BloodSwap
+          bloodReagent: InsectBlood
 
 - type: entityTrait
   id: BloodSwapSap
@@ -40,11 +55,16 @@
   description: trait-sap-blood-desc
   category: BloodSwapTraits
   cost: 1
-#  speciesBlacklist: [IPC, Plasmaman, Diona]
-  speciesBlacklist: [Diona]
-  components:
-    - type: BloodSwap
-      bloodReagent: Sap
+  requirements:
+    - !type:PlayerSpeciesRequirement
+      #species: [IPC, Plasmaman, Diona]
+      species: [Diona]
+      inverted: true
+  functions:
+    - !type:AddComponentTrait
+      components:
+        - type: BloodSwap
+          bloodReagent: Sap
 
 - type: entityTrait
   id: BloodSwapSlime
@@ -52,12 +72,16 @@
   description: trait-slime-blood-desc
   category: BloodSwapTraits
   cost: 1
-#  speciesBlacklist: [IPC, Plasmaman, SlimePerson]
-  speciesBlacklist: [SlimePerson]
-  components:
-    - type: BloodSwap
-      bloodReagent: Slime
-
+  requirements:
+    - !type:PlayerSpeciesRequirement
+      #species: [IPC, Plasmaman, SlimePerson]
+      species: [SlimePerson]
+      inverted: true
+  functions:
+    - !type:AddComponentTrait
+      components:
+        - type: BloodSwap
+          bloodReagent: Slime
 
 - type: entityTrait
   id: BloodSwapAmmonia
@@ -65,11 +89,16 @@
   description: trait-ammonia-blood-desc
   category: BloodSwapTraits
   cost: 1
-#  speciesBlacklist: [IPC, Plasmaman, Vox, Resomi]
-  speciesBlacklist: [Vox]
-  components:
-    - type: BloodSwap
-      bloodReagent: AmmoniaBlood
+  requirements:
+    - !type:PlayerSpeciesRequirement
+      #species: [IPC, Plasmaman, Vox, Resomi]
+      species: [Vox]
+      inverted: true
+  functions:
+    - !type:AddComponentTrait
+      components:
+        - type: BloodSwap
+          bloodReagent: AmmoniaBlood
 
 # \/ Species that aren't real yet \/
 
@@ -80,9 +109,15 @@
 #  category: BloodSwapTraits
 #  cost: 1
 #  speciesBlacklist: [IPC, Plasmaman, Shadowkin]
-#  components:
-#    - type: BloodSwap
-#      bloodReagent: BlackBlood
+#  requirements:
+#    - !type:PlayerSpeciesRequirement
+#      species: [IPC, Plasmaman, Shadowkin]
+#      inverted: true
+#  functions:
+#    - !type:AddComponentTrait
+#      components:
+#      - type: BloodSwap
+#        bloodReagent: BlackBlood
 
 #- type: entityTrait
 #  id: BloodSwapShimmering
@@ -90,10 +125,15 @@
 #  description: trait-shimmering-blood-desc
 #  category: BloodSwapTraits
 #  cost: 1
-#  speciesBlacklist: [IPC, Plasmaman, Thaven]
-#  components:
-#    - type: BloodSwap
-#      bloodReagent: ShimmeringBlood
+#  requirements:
+#    - !type:PlayerSpeciesRequirement
+#      species: [IPC, Plasmaman, Thaven]
+#      inverted: true
+#  functions:
+#    - !type:AddComponentTrait
+#      components:
+#      - type: BloodSwap
+#        bloodReagent: ShimmeringBlood
 
 #- type: entityTrait
 #  id: BloodSwapIntoxicating
@@ -101,7 +141,12 @@
 #  description: trait-intoxicating-blood-desc
 #  category: BloodSwapTraits
 #  cost: 1
-#  speciesBlacklist: [IPC, Plasmaman, Thaven]
-#  components:
-#    - type: BloodSwap
-#      bloodReagent: IntoxicatingBlood
+#  requirements:
+#    - !type:PlayerSpeciesRequirement
+#      species: [IPC, Plasmaman, Thaven]
+#      inverted: true
+#  functions:
+#    - !type:AddComponentTrait
+#      components:
+#      - type: BloodSwap
+#        bloodReagent: IntoxicatingBlood

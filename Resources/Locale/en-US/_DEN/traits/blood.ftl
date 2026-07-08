@@ -16,11 +16,11 @@ trait-slime-blood-desc = You have slime for blood, as seen in Slimes.
 trait-ammonia-blood-name = Ammonia blood
 trait-ammonia-blood-desc = You have ammonia-based blood, as seen in Vox and Resomi.
 
-trait-ammonia-blood-name = Black blood
-trait-ammonia-blood-desc = You have inky, black blood, as seen in Shadowkin.
+trait-black-blood-name = Black blood
+trait-black-blood-desc = You have inky, black blood, as seen in Shadowkin.
 
-trait-ammonia-blood-name = Shimmering blood
-trait-ammonia-blood-desc = You have shimmering, hallucinogenic blood, as seen in Thaven.
+trait-shimmering-blood-name = Shimmering blood
+trait-shimmering-blood-desc = You have shimmering, hallucinogenic blood, as seen in Thaven.
 
-trait-ammonia-blood-name = Intoxicating blood
-trait-ammonia-blood-desc = You have ethanol-based blood, vampires beware!
+trait-intoxicating-blood-name = Intoxicating blood
+trait-intoxicating-blood-desc = You have ethanol-based blood, vampires beware!
