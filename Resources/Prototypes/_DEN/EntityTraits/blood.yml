@@ -1,0 +1,107 @@
+- type: entityTrait
+  id: BloodSwapRed
+  name: trait-red-blood-name
+  description: trait-red-blood-desc
+  category: BloodSwapTraits
+  cost: 1
+#  speciesBlacklist: [IPC, Plasmaman, Human, Dwarf, Reptilian, Vulpkanin, Tajaran, Felinid, Harpy, Oni, Rodentia, Feroxi, Ovinia, Canid, Kitsune]
+  speciesBlacklist: [Human, Dwarf, Reptilian, Vulpkanin]
+  components:
+    - type: BloodSwap
+      bloodReagent: Blood
+
+- type: entityTrait
+  id: BloodSwapBlue
+  name: trait-blue-blood-name
+  description: trait-blue-blood-desc
+  category: BloodSwapTraits
+  cost: 1
+#  speciesBlacklist: [IPC, Plasmaman, Arachnid, Arachne]
+  speciesBlacklist: [Arachnid]
+  components:
+    - type: BloodSwap
+      bloodReagent: CopperBlood
+
+- type: entityTrait
+  id: BloodSwapInsect
+  name: trait-insect-blood-name
+  description: trait-insect-blood-desc
+  category: BloodSwapTraits
+  cost: 1
+#  speciesBlacklist: [IPC, Plasmaman, Moth, Chitinid]
+  speciesBlacklist: [Moth]
+  components:
+    - type: BloodSwap
+      bloodReagent: InsectBlood
+
+- type: entityTrait
+  id: BloodSwapSap
+  name: trait-sap-blood-name
+  description: trait-sap-blood-desc
+  category: BloodSwapTraits
+  cost: 1
+#  speciesBlacklist: [IPC, Plasmaman, Diona]
+  speciesBlacklist: [Diona]
+  components:
+    - type: BloodSwap
+      bloodReagent: Sap
+
+- type: entityTrait
+  id: BloodSwapSlime
+  name: trait-slime-blood-name
+  description: trait-slime-blood-desc
+  category: BloodSwapTraits
+  cost: 1
+#  speciesBlacklist: [IPC, Plasmaman, SlimePerson]
+  speciesBlacklist: [SlimePerson]
+  components:
+    - type: BloodSwap
+      bloodReagent: Slime
+
+
+- type: entityTrait
+  id: BloodSwapAmmonia
+  name: trait-ammonia-blood-name
+  description: trait-ammonia-blood-desc
+  category: BloodSwapTraits
+  cost: 1
+#  speciesBlacklist: [IPC, Plasmaman, Vox, Resomi]
+  speciesBlacklist: [Vox]
+  components:
+    - type: BloodSwap
+      bloodReagent: AmmoniaBlood
+
+# \/ Species that aren't real yet \/
+
+#- type: entityTrait
+#  id: BloodSwapBlack
+#  name: trait-black-blood-name
+#  description: trait-black-blood-desc
+#  category: BloodSwapTraits
+#  cost: 1
+#  speciesBlacklist: [IPC, Plasmaman, Shadowkin]
+#  components:
+#    - type: BloodSwap
+#      bloodReagent: BlackBlood
+
+#- type: entityTrait
+#  id: BloodSwapShimmering
+#  name: trait-shimmering-blood-name
+#  description: trait-shimmering-blood-desc
+#  category: BloodSwapTraits
+#  cost: 1
+#  speciesBlacklist: [IPC, Plasmaman, Thaven]
+#  components:
+#    - type: BloodSwap
+#      bloodReagent: ShimmeringBlood
+
+#- type: entityTrait
+#  id: BloodSwapIntoxicating
+#  name: trait-intoxicating-blood-name
+#  description: trait-intoxicating-blood-desc
+#  category: BloodSwapTraits
+#  cost: 1
+#  speciesBlacklist: [IPC, Plasmaman, Thaven]
+#  components:
+#    - type: BloodSwap
+#      bloodReagent: IntoxicatingBlood
