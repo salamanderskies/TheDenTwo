@@ -2,7 +2,9 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 
+#pragma warning disable IDE1006 // Naming Styles - Den Edit Start
 namespace Content.Shared._AS.Traits;
+#pragma warning restore IDE1006 // Naming Styles - Den Edit End
 
 /// <summary>
 /// System that handles swapping blood reagents. Used with <see cref="BloodSwapComponent"/>.
