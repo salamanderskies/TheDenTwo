@@ -13,6 +13,8 @@ public abstract partial class SharedChatSystem
 
     [Dependency] private IConfigurationManager _cfg = default!;
 
+    public static readonly string[] ChatAllowedTags = ["bolditalic", "bold", "color", "italic", "mono"];
+
     // TODO: Kill the other spot where this is getting called from and move this into WhisperMuffle (if we even keep using it)
     /// <summary>
     /// Runs default whisper obfuscation on the dialog parts of the provided message based on the passed float.
@@ -50,7 +52,7 @@ public abstract partial class SharedChatSystem
     /// <returns>The correct speech verb prototype to use.</returns>
     public SpeechVerbPrototype GetComplexSpeechVerb(EntityUid source, ComplexChatMessage message, LanguagePrototype language, ChatChannel channel)
     {
-        var lastDialog = message.Parts.LastOrDefault(p => p.Item1 == ChatPart.Dialog).Item2;
+        var lastDialog = message.Parts.LastOrDefault(p => p.Item1 == ChatPart.Dialog).Item2 ?? "";
 
         SpeechVerbPrototype? current = null;
         Dictionary<LocId, ProtoId<SpeechVerbPrototype>>? currentSuffixVerbs = null;
@@ -58,7 +60,7 @@ public abstract partial class SharedChatSystem
         {
             if (speechVerbs.TryGetValue(channel, out var channelVerbs))
             {
-                current = _prototypeManager.Index(channelVerbs.DefaultVerb);
+                current = ProtoMan.Index(channelVerbs.DefaultVerb);
                 currentSuffixVerbs = channelVerbs.SuffixSpeechVerbs;
             }
         }
@@ -67,7 +69,7 @@ public abstract partial class SharedChatSystem
         {
             foreach (var (str, id) in currentSuffixVerbs)
             {
-                var proto = _prototypeManager.Index(id);
+                var proto = ProtoMan.Index(id);
                 if (lastDialog.EndsWith(Loc.GetString(str)) && proto.Priority >= (current?.Priority ?? 0))
                 {
                     current = proto;
@@ -112,7 +114,8 @@ public enum ChatPart
 {
     Dialog,
     Emote,
-    Tag
+    DialogTag,
+    EmoteTag,
 }
 
 public readonly record struct ComplexChatMessage()
@@ -160,19 +163,45 @@ public readonly record struct ComplexChatMessage()
         NeedsSeparation = needsSeparation;
         if (escapeMarkup)
             message = FormattedMessage.EscapeText(message);
+
+        var parsedMsg = FormattedMessage.FromMarkupPermissive(message);
+        List<(ChatPart, string)> parts = [];
         if (!isDetailed)
         {
-            Parts = [(ChatPart.Dialog, message)];
+            foreach (var hunk in parsedMsg.Nodes)
+            {
+                parts.Add((hunk.IsPlainText ? ChatPart.Dialog : ChatPart.DialogTag, hunk.ToString()));
+            }
+
+            Parts = parts;
             return;
         }
 
-        var outside = false;
-        List<(ChatPart, string)> parts = [];
-        foreach (var msgChunk in message.Split(delimiter))
+        var outside = true;
+        foreach (var hunk in parsedMsg.Nodes)
         {
-            if (!string.IsNullOrEmpty(msgChunk))
-                parts.Add((outside ? ChatPart.Dialog : ChatPart.Emote, msgChunk));
-            outside = !outside;
+            if (!hunk.IsPlainText)
+            {
+                parts.Add((outside ? ChatPart.EmoteTag : ChatPart.DialogTag, hunk.ToString()));
+                continue;
+            }
+
+            // Don't swap output between tags.
+            var pieces = hunk.ToString().Split(Delimiter);
+            if (pieces.Length == 1 && !string.IsNullOrEmpty(pieces[0]))
+            {
+                parts.Add((outside ? ChatPart.Emote : ChatPart.Dialog, pieces[0]));
+                continue;
+            }
+
+            foreach (var msgChunk in pieces)
+            {
+                if (!string.IsNullOrEmpty(msgChunk))
+                {
+                    parts.Add((outside ? ChatPart.Emote : ChatPart.Dialog, msgChunk));
+                    outside = !outside;
+                }
+            }
         }
 
         Parts = parts;
